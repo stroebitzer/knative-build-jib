@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.3.RELEASE'
+	id 'java'
+	id 'com.google.cloud.tools.jib' version '1.0.2'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.hust'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+jib {
+	from {
+		image = 'openjdk:alpine'
+	}
+//	to {
+//		image = 'ueber/knative-jib'
+		//credHelper = 'osxkeychain'
+//		tags = ['latest']
+//	}
+//	extraDirectory = new File('hust')
+	container {
+//		jvmFlags = ['-Xms512m', '-Xdebug', '-Xmy:flag=jib-rules']
+		mainClass = 'com.hust.jib.JibApplication'
+		ports = ['8080']
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
