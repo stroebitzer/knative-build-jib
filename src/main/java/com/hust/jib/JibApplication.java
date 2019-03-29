@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 @SpringBootApplication
 public class JibApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(JibApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(JibApplication.class, args);
+    }
 
-	@Controller
-	private final class MyController {
+    @Controller
+    private final class MyController {
 
-		@GetMapping
-		public ResponseEntity<String> root() {
-			return ResponseEntity.ok("hello from hust");
-		}
+        @GetMapping
+        public ResponseEntity<String> root() {
+            return ResponseEntity.ok("Hello KNative Build Jib");
+        }
 
-	}
+    }
 
 }
 
