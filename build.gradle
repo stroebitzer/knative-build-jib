@@ -7,7 +7,7 @@ plugins {
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.hust'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -20,12 +20,9 @@ jib {
     }
     to {
         image = 'ueber/knative-build-jib'
-        //credHelper = 'osxkeychain'
-        tags = ['0.0.1']
+        tags = [ version ]
     }
-//	extraDirectory = new File('hust')
     container {
-//		jvmFlags = ['-Xms512m', '-Xdebug', '-Xmy:flag=jib-rules']
         mainClass = 'com.hust.jib.JibApplication'
         ports = ['8080']
     }
