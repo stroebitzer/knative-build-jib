@@ -20,7 +20,7 @@ jib {
     }
     to {
         image = 'ueber/knative-build-jib'
-        tags = [ '1.0.4' ]
+        tags = [ 'latest' ]
     }
     container {
         mainClass = 'com.hust.jib.JibApplication'
