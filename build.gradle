@@ -7,7 +7,6 @@ plugins {
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.hust'
-//version = '0.1.0'
 sourceCompatibility = '1.8'
 
 repositories {
